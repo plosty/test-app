@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <!-- Test comment: This app is working with ChatGPT integration -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Generate Errors</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.4">
+  <style type="text/css">
+    p.p1 {
+      margin: 0.0px 0.0px 0.0px 0.0px;
+      font: 12.0px Monaco;
+      color: #161516;
+      -webkit-text-stroke: #161516;
+      background-color: #161516;
+      background-color: rgba(22, 21, 22, 0.039)
+    }
+
+    span.s1 {
+      font-kerning: none
+    }
+
+    span.s2 {
+      text-decoration: underline;
+      font-kerning: none
+    }
+  </style>
+  <!-- Sentry config -->
+
+  <!-- <script>
+    // Configure sentryOnLoad before adding the Loader Script
+    window.sentryOnLoad = function () {
+      Sentry.init({
+        release: "0.1",
+        environment: "test-env",
+        integrations: [
+          Sentry.replayIntegration({
+            // Additional SDK configuration goes in here, for example:
+            maskAllText: false,
+            blockAllMedia: false,
+          }),
+        ]
+      });
+    };
+  </script>
+
+  <script src="https://js-de.sentry-cdn.com/e781d8c37a3df209eea78b3802cbd250.min.js" crossorigin="anonymous"></script> -->
+
+  <!-- Rollbar config -->
+
+
+
+  <script>
+
+    var _rollbarConfig = {
+
+      replay: {
+        enabled: true,
+        autoStart: true,
+        triggers: [{ 
+          type: 'occurrence',
+          level: ['error', 'critical'],
+        }],
+      },
+
+      captureUncaught: true,
+      captureUnhandledRejections: true,  
+
+
+      // phil_rollbar_account_testing account - account_id 509636
+      //
+      // account tokens:
+      // 
+      // public_id for All_Scopes_512 : c9dabaa8a0d04508ac2c5161bd8110bb
+      // All_Scopes_512: c9dabaa8a0d04508ac2c5161bd8110bbe14dea86babdfed25ca196806933a2ca554db7394e2140f5749a991519776baf
+      // RW_128: a377645ef4064433b8c5b1ae0ecebbb3
+      // encrypted_write: bb834c4d012746218fd1765ee03eab27
+      // unencrypted_read: 30f95b3c90e440bdaf680f846098d879
+      // legacy_read_write: 8331957007f148318e0d5c53e5f0afa2
+      // 
+      // Team: 1087561 - 1151925
+      // User: 316205
+      // 
+      // project tokens: FirstProject: 691468
+      // 
+      // accessToken: 'da6e96b6debb4f018ed7255546935d8352b7ee6c41196ca96a079e10f9f7af4d0c139211e31f46bf7e8d3a56bfe73eb2', // 512_client
+      accessToken: '0dfc00af25d943228c183208d6f8ff41', // 128_client
+      serverToken: 'fcc8909a21c240f98dd78b00f58fa5bb', // 128 server
+      // serverToken: '6530087de8c946fd85857bda7672258bfbe0cf2122417b44cb9872153f712a58e08031e92db823cd29fbd9410eadf3fd', // 512 server
+      // serverToken: '0c041368555543ff817b0103ff6db32f', // legacy_server
+      // legacy read: dab17804406c4fd88a447403d7e9993e
+      // accessToken: '7defe8dcf2d07e25e7c36bf2fd8198f8', // 128_client_public_key
+      // serverToken: '2a9a440b5126d5bde40b3f540254587f', // 128 server_public_key
+      // readWrite: fcd9304cc93d4e90b1b2c8ac623fd7727588ca4263bde2cbc94f496df934552964b97a11ebfab5de1ec2ff0334b5a4a1
+
+       // project tokens: PL_0923
+      // accessToken: '7648d0fc3024478bb430c319fc57c624f3702481e36bc9b54795c84b1d1fa83c19e6c2b9c3289f58c2c77356b9941ed3',
+      // serverToken: 'a255929c249d4c878c5b57d7a5b3c7fb6c4938230a62247cab6dfcbdf6a68df8979c3536048f9f6d094cbccdb3d5d632',
+
+
+      // phil_losty_token_test_250129
+      // 
+      // not in flag
+      // 
+      // account: 537426 / https://rollbar.com/admin/account/537426/
+      // Account tokens:
+      // Read: 8656b30420314e0b95a751469c797e85
+      // Write: c25e94ad79a2434b862b7ddc2a2b5c15
+      // 
+      // project - FirstProject - ID: 748077 
+      // accessToken: '9dcb0988231c460da37310baa2fce943', // v2
+      // serverToken: 'b421ba3430f543938e4e9e5ef96c7a88', // v2
+      // read: 6599006ddc054793b2f609f3de570e51, // v0
+      // write: 938b21d8eb824ddebe60975679bc863b, // v0
+      // 512_rw: 8511ee343e4a418fbe1a675b27453da4645d9bcd1f4d0dfb6fafeefb2cf25db84bb7ec3be597f13a557a3af64f8df592 // v2
+      //
+      // Sample Item
+      // UUID: a90369f14ccd4c6fb47d9b3f90e24cd0
+      // counter: 32
+      // id: 1647852809
+      // 
+      // deploy_id 35945615
+      // 
+      // Project 2 - ID 748946
+      // accessToken: 'e68973824e29438eb7d5bf777c88fdcf', // v0
+      // accessToken: 'a0be173fa05f490e816d5aaa48e7a112b031fbd0a120ab18de76bc2b988347c7e53d11b5dfa45756418d23b359ab8c62',
+
+
+      // separate testing accounts: 
+      // accessToken: '5e981075ed0147e79cebbd192b83f0d14120285722b54f9337340fdc5fa702d8247434fbb82cbeedc4e30c0d2f39057b', // v0
+      // accessToken: 'abbe9e24b6b4445598e71416c7c0d410', // encrypted
+      // accessToken: '86739480a149432ea7babe7d9affcd87',
+      // serverToken: '956ceb61c13e41d0a692c5fcb5953be6',
+
+      // 
+      // item - top level - 15436 / 1640394063
+      // member item - 6511 / 1476977414
+      // read token - b4d0e6086edf45b987cb1b43cb6f8b2a
+      // 0928372b8bcb44c8b2a3f66dccde92b35c68ea23f5cbed3b34e1c8a1c01fe4827246d1ba7a810aa96c77abdedfaea6c0
+
+      // product_advanced account
+      // accessToken: '881025a43c954df49643b2e9ac479333b6e539cf7badb00e13ae2c2021ed0b8b616c770730b20c5926ad6128bbb3e626', // encrypted
+      // serverToken: '82c422af9cfa4083b2f9e3640a9783ccae4ec18489d68e41a5dc6545ce7396891ed43146b53614cd8430e67e94352769', // encrypted 
+      // rwToken: '8edaa402ea7f45fd9296b91a095f88c1', // encrypted
+      // accessToken: '0a19585f0a2f4697a95080e0db9d8bb1', // legacy_unencrypted
+      // serverToken: '0f1bb35487554d23999bfb6981fa06a0', // legacy_unencrypted 
+
+      // phil_losty_1411 account
+      // accessToken: '015fdf27da5a468eb7878e63635bba93',
+
+      // product_free test fields
+      // accessToken: '77f71661a56b4fbea73fd6a6b76fb82831e43f101dffd940e73a6434e27ef100a9ee154f801a3cdf527d39c2b7cdc8ea',
+      // serverToken: '521fd2d56f7e45f180be2ec87849ecb6743c2110fa35721bd63ddfb68d383e2ea3dc52a37e651b5e0026c42a0898c3d2',
+
+      // local dev
+      // accessToken: 'df3b5de87605494bbc1b6a3158b1ea22',
+      // serverToken: 'd0909365a1c944cab65a013dd17176687b8f2edfd4a7c6514fa2f9e740a1387a59d516b6fb07144ef1215ad0a2c2ec16'
+      // python mox/scripts/utility_scripts/create_test_data_for_vm.py http://localhost:8000/api/1/ d0909365a1c944cab65a013dd17176687b8f2edfd4a7c6514fa2f9e740a1387a59d516b6fb07144ef1215ad0a2c2ec16 10 1
+      // external token - a538c48f7b2f4a428aebf8097d6a38c022a318e468ba33950640dbfd5da340151412146270bfa3aafeeeb6ca9db4b681
+
+      payload: {
+        environment: 'shortcut-test', // + Math.round(Math.random() * 1000),
+        host: 'localbox',
+        level: 'error',
+        // context: 'rollbar/test'
+        client: {
+          javascript: {
+            code_version: '223456789abcde',
+            host: 'local_dev_box',
+            // source_map_enabled: true,
+            // guess_uncaught_frames: true
+            // },
+            // person: {
+            //   id: 44, // required 
+            //   username: 'dadamskis',
+            //   email: 'dadamskis@example.com'
+            // }
+          }
+        },
+        custom: {
+          session_name: 'single page test data',
+          location: 'home',
+        }
+      }
+    }
+    
+    // Rollbar Snippet
+    // version: v3.0.0-beta.5
+    !function(){"use strict";function r(r,o,n){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){for(var e=o.addEventListener;e._rollbarOldAdd&&e.belongsToShim;)e=e._rollbarOldAdd;var t=function(o,n,t){e.call(this,o,r.wrap(n),t)};t._rollbarOldAdd=e,t.belongsToShim=n,o.addEventListener=t;for(var a=o.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,o,n){a.call(this,r,o&&o._rollbar_wrapped||o,n)};l._rollbarOldRemove=a,l.belongsToShim=n,o.removeEventListener=l}}function o(r,n){this.impl=r(n,this),this.options=n,function(r){for(var o=function(r){return function(){var o=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,o)}},n="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),e=0;e<n.length;e++)r[n[e]]=o(n[e])}(o.prototype)}o.prototype._swapAndProcessMessages=function(r,o){var n,e,t;for(this.impl=r(this.options);n=o.shift();)e=n.method,t=n.args,this[e]&&"function"==typeof this[e]&&("captureDomContentLoaded"===e||"captureLoad"===e?this[e].apply(this,[t[0],n.ts]):this[e].apply(this,t));return this};var n=o;function e(r){return e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(r){return typeof r}:function(r){return r&&"function"==typeof Symbol&&r.constructor===Symbol&&r!==Symbol.prototype?"symbol":typeof r},e(r)}function t(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var a=0;function l(r,o){this.options=r,this._rollbarOldOnError=null;var n=a++;this.shimId=function(){return n},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[n]={handler:o,messages:[]})}var i=function(r,o){return new l(r,o)},s=function(r){return new n(i,r)};function d(r){return t((function(){var o=Array.prototype.slice.call(arguments,0),n={shim:this,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}l.prototype.loadFull=function(r,o,n,e,a){var l=!1,i=o.createElement("script"),s=o.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=e.rollbarJsUrl,n||(i.async=!0),i.onload=i.onreadystatechange=t((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var o;if(void 0===r._rollbarDidLoad){o=new Error("rollbar.js did not load");for(var n,e,t,l,i=0;n=r._rollbarShims[i++];)for(n=n.messages||[];e=n.shift();)for(t=e.args||[],i=0;i<t.length;++i)if("function"==typeof(l=t[i])){l(o);break}}"function"==typeof a&&a(o)}()}})),d.insertBefore(i,s)},l.prototype.wrap=function(r,o,n){try{var e;if(e="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){n&&"function"==typeof n&&n.apply(this,arguments);try{return r.apply(this,arguments)}catch(n){var o=n;throw o&&("string"==typeof o&&(o=new String(o)),o._rollbarContext=e()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o),o}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(o){return r}};for(var c="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),p=0;p<c.length;++p)l.prototype[c[p]]=d(c[p]);var u="https://cdn.rollbar.com/rollbarjs/refs/tags/v3.0.0-beta.5/rollbar.min.js";if(_rollbarConfig=_rollbarConfig||{},!_rollbarConfig.rollbarJsUrl){var f="replay"in _rollbarConfig;_rollbarConfig.rollbarJsUrl=f?u.replace("rollbar.min.js","rollbar.replay.min.js"):u}_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var b,h=function(o,n){if(o){var a=n.globalAlias||"Rollbar";if("object"===e(o[a]))return o[a];o._rollbarShims={},o._rollbarWrappedError=null;var l=new s(n);return t((function(){n.captureUncaught&&(l._rollbarOldOnError=o.onerror,function(r,o){if(r){var n;if("function"==typeof o._rollbarOldOnError)n=o._rollbarOldOnError;else if(r.onerror){for(n=r.onerror;n._rollbarOldOnError;)n=n._rollbarOldOnError;o._rollbarOldOnError=n}o.handleAnonymousErrors();var e=function(){var e=Array.prototype.slice.call(arguments,0);!function(r,o,n,e){r._rollbarWrappedError&&(e[4]||(e[4]=r._rollbarWrappedError),e[5]||(e[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=o.handleUncaughtException.apply(o,e);n&&n.apply(r,e),"anonymous"===t&&(o.anonymousErrorsPending+=1)}(r,o,n,e)};e._rollbarOldOnError=n,r.onerror=e}}(o,l),n.wrapGlobalEventHandlers&&function(o,n,e){if(o){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)o[a=l[t]]&&o[a].prototype&&r(n,o[a].prototype,e)}}(o,l,!0)),n.captureUnhandledRejections&&function(r,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var n,e,t;try{n=r.reason}catch(r){n=void 0}try{e=r.promise}catch(r){e="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!n&&t&&(n=t.reason,e=t.promise)}catch(r){}n||(n="[unhandledrejection] error getting `reason` from event"),o&&o.handleUnhandledRejection&&o.handleUnhandledRejection(n,e)};n.belongsToShim=!0,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}(o,l);var t=n.autoInstrument;return!1!==n.enabled&&(void 0===t||!0===t||function(r){return!("object"!==e(r)||void 0!==r.page&&!r.page)}(t))&&o.addEventListener&&(o.addEventListener("load",l.captureLoad.bind(l)),o.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),o[a]=l,l}))()}}(window,_rollbarConfig),y=(b=_rollbarConfig,function(r){if(!r&&!window._rollbarInitialized){for(var o,n,e=(b=b||{}).globalAlias||"Rollbar",t=window.rollbar,a=function(r){return new t(r)},l=0;o=window._rollbarShims[l++];)n||(n=o.handler),o.handler._swapAndProcessMessages(a,o.messages);window[e]=n,window._rollbarInitialized=!0}});window.rollbar=s,h.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,y)}();
+    // End Rollbar Snippet
+
+    // Sending an arbitrary message to Rollbar
+    Rollbar.info('Test Error @ ' + Date.now()); 
+
+    // Creating an error with an invalid line of code. The SDK will automatically catch and report it.
+    var a = null;
+    a.hello(); 
+  </script>
+
+  <script>
+    function createItemByCurl() {
+
+      const ITEM_NUMBER = 3000;
+
+      const options = {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'X-Rollbar-Access-Token': _rollbarConfig.serverToken,
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          data: {
+            environment: 'curl_item',
+            ip: '92.239.87.173',
+            body: { message: { body: JSON.stringify('Do While Test Case 13:31') } }
+          }
+        })
+      };
+
+      function postItem() {
+        window.setTimeout((index) => {
+          fetch('https://api.rollbar.com/api/1/item/', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+        }, index * 300)
+      }
+
+      let index = 0
+      console.log("initialising do while loop to create " + ITEM_NUMBER + " occurrences");
+      do {
+        // console.log("Index: " + index);
+        postItem(index);
+        index++;
+      }
+      while (index < ITEM_NUMBER);
+      console.log("do loop finished")
+    }
+
+  </script>
+
+
+  <script>
+    function myFunction() {
+      try {
+        logAnError();
+      }
+      catch (e) {
+        window.onerror("error: caught error and pushing new error to RB", e)
+      }
+    }
+    function logAnError() {
+      console.log("everyday I'm logging " + Date.now())
+      Rollbar.configure({
+        payload: {
+          person: {
+            id: 123456, // required
+            username: "scarman",
+            email: "scarman@example.com"
+          }
+        }
+      })
+      console.log(50 / 0)
+      window.onerror("TestRollbarError: testing window.onerror inside the header", window.location.href)
+      throw ('Catch a new Item Rollbar! ' + Date.now())
+
+    }
+    function myOtherFunction() {
+      try {
+        logAnotherError();
+      }
+      catch (e) {
+        window.onerror("error: caught error and pushing new error to RB", e)
+      }
+    }
+    function logAnotherError() {
+      console.log(1000 * 50 / 0)
+      window.onerror("TestRollbarError: testing window.onerror inside the header", window.location.href)
+      throw ('Catch a new Item Rollbar! ' + Date.now())
+    }
+    function myThirdFunction(input) {
+      let randomInt = Math.round(Math.random() * 1000)
+      throwError('throwing error: ' + randomInt)
+    }
+    function throwError(err) {
+      console.log(_rollbarConfig)
+      console.log(err)
+      window.onerror(err)
+    }
+  </script>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <h1>Rollbar Test</h1>
+  <button id="button1" onclick="myFunction()">Press Me!</button>
+  <button id="button2" onclick="myOtherFunction()">Press Me Too!</button>
+  <button id="button3" onclick="myThirdFunction()">Don't press me!</button>
+  <button id="button4" onclick="createItemByCurl()">Curl</button>
+  <p></p>
+</body>
+
+</html>
